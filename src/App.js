@@ -12,7 +12,7 @@ const App = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/contacts");
+      const response = await axios.get("https://backend123.up.railway.app/contacts");
       setContacts(response.data);
     } catch (error) {
       console.error("Error fetching contacts:", error);
@@ -21,7 +21,7 @@ const App = () => {
 
   const addContact = async (newContact) => {
     try {
-      const response = await axios.post("http://localhost:5000/contacts", newContact);
+      const response = await axios.post("https://backend123.up.railway.app/contacts", newContact);
       setContacts([...contacts, response.data]);
     } catch (error) {
       console.error("Error adding contact:", error);
@@ -30,7 +30,7 @@ const App = () => {
 
   const updateContact = async (id, updatedContact) => {
     try {
-      await axios.put(`http://localhost:5000/contacts/${id}`, updatedContact);
+      await axios.put(`https://backend123.up.railway.app/contacts/${id}`, updatedContact);
       setContacts(contacts.map(contact => contact.id === id ? updatedContact : contact));
     } catch (error) {
       console.error("Error updating contact:", error);
@@ -39,7 +39,7 @@ const App = () => {
 
   const deleteContact = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/contacts/${id}`);
+      await axios.delete(`https://backend123.up.railway.app/contacts/${id}`);
       setContacts(contacts.filter(contact => contact.id !== id));
     } catch (error) {
       console.error("Error deleting contact:", error);

@@ -13,7 +13,7 @@ const ContactsTable = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/contacts");
+        const response = await axios.get("https://backend123.up.railway.app/contacts");
         setContacts(response.data);
       } catch (error) {
         console.error("Error fetching contacts:", error);
@@ -26,7 +26,7 @@ const ContactsTable = () => {
   // Delete a contact
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/contacts/${id}`);
+      await axios.delete(`https://backend123.up.railway.app/contacts/${id}`);
       setContacts((prevContacts) => prevContacts.filter((contact) => contact._id !== id));
     } catch (error) {
       console.error("Error deleting contact:", error);
@@ -41,7 +41,7 @@ const ContactsTable = () => {
   // Update contact details
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/contacts/${currentContact._id}`, currentContact);
+      await axios.put(`https://backend123.up.railway.app/contacts/${currentContact._id}`, currentContact);
       setContacts((prevContacts) =>
         prevContacts.map((contact) =>
           contact._id === currentContact._id ? currentContact : contact
