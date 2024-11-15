@@ -26,11 +26,17 @@ This repository contains the frontend for the **Contact Management** feature, a 
 ## 📦 Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/contact-management-frontend.git
-   cd contact-management-frontend
+    ```bash
+    git clone https://github.com/your-username/contact-management-frontend.git
+    cd contact-management-frontend
+    ```
 
 2. Install dependencies:
+    ```bash
     npm install
+    ```
 
-3. npm start
+3. Start the development server:
+    ```bash
+    npm start
+    ```
